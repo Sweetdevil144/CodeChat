@@ -15,8 +15,10 @@ limitations under the License.
 */
 package main
 
-import "CodeChat/cmd"
+import (
+	"CodeChat/cmd/chat"
+)
 
 func main() {
-	cmd.Execute()
+	chat.Execute()
 }
