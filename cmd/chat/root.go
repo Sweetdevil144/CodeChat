@@ -2,10 +2,9 @@ package chat
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
-
-	"github.com/spf13/cobra"
 )
 
 var start string
@@ -31,7 +30,7 @@ func Execute() {
 }
 
 func init() {
-	startCmd.Flags().StringVarP(&start, "start", "s", "", "Start the Chat Application")
+	startCmd.Flags().StringVarP(&start, "start", "s", "default_start_command_value", "Start the Chat Application")
 	err := viper.BindPFlag("start", startCmd.Flags().Lookup("start"))
 	if err != nil {
 		fmt.Println("Error in retrieving flag in startCmd")
