@@ -1,4 +1,4 @@
-package chat
+package cmd
 
 import (
 	"fmt"
