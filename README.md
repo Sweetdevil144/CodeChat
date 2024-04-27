@@ -1,10 +1,3 @@
-Building a CLI chat application using Go is a great project. Your initial approach is solid, but I'll refine it and
-provide a detailed guide with prerequisites, steps, and code snippets. This will help you get a clear understanding of
-each step involved in creating your application. The aim is to create a user-friendly, efficient, and scalable chat
-application.
-
----
-
 # Building a CLI Chat Application in Go
 
 ## Table of Contents
