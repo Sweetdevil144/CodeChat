@@ -1,5 +1,3 @@
-For your CLI Chat Application in Go, here’s a structured README document to guide you and any other developers who might work on or use your project. This README covers the basics of getting started, using the application, and contributing to its development.
-
 # CLI Chat Application
 
 This CLI Chat Application built in Go provides a simple yet powerful platform for real-time messaging using WebSockets. It features a command-line interface for initiating and managing chat sessions.
