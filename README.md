@@ -1,93 +1,81 @@
-# CLI Chat Application
+### Tech Stack
 
-This CLI Chat Application built in Go provides a simple yet powerful platform for real-time messaging using WebSockets. It features a command-line interface for initiating and managing chat sessions.
+1. **Programming Language**: Golang
 
-## Table of Contents
+   - For building the main application logic and handling server-client communication.
 
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+2. **CLI Framework**: CobraCLI
 
-## Prerequisites
+   - For creating the command line interface that initiates the chat client.
 
-Before you begin, ensure you have met the following requirements:
-- Go 1.15 or higher installed on your machine.
-- Basic understanding of Go programming and CLI operations.
-- Familiarity with WebSocket and network programming concepts.
+3. **Networking**: Gorilla WebSocket
 
-## Installation
+   - A Go package that provides a complete and tested implementation of the WebSocket protocol.
 
-To install the CLI Chat Application, follow these steps:
+4. **Data Handling**: JSON
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/my-chat-app.git
-   cd my-chat-app
-   ```
+   - For message formatting and data exchange between clients and server.
 
-2. Build the application:
-   ```bash
-   go build .
-   ```
+5. **Logging**: Zap
 
-This will compile the application and create an executable in your directory.
+   - A fast, structured, leveled logging framework for Go.
 
-## Usage
+6. **Configuration Management**: Viper
 
-To start using the chat application, you need to run the server and client separately.
+   - Works well with Cobra for handling configuration files and environment variables.
 
-- Start the server:
-  ```bash
-  ./chatapp start server
-  ```
+7. **Testing**: Go Testing Framework
 
-- In another terminal, start the client:
-  ```bash
-  ./chatapp start client
-  ```
+   - For unit and integration testing of your Go code.
 
-Follow the on-screen instructions to connect and start messaging.
+8. **Version Control**: Git
 
-## Features
+   - For source code management.
 
-- **Real-time Messaging:** Utilize WebSockets for live, real-time communication.
-- **Concurrent Connections:** Support for multiple users connected simultaneously.
-- **CLI-Based Interface:** Easy to use command-line interface for all interactions.
+9. **Continuous Integration/Continuous Deployment (CI/CD)**: GitHub Actions
+   - For automating builds, tests, and deployments.
 
-## Project Structure
+### Roadmap
 
-The project is organized as follows:
+#### Milestone 1: Project Setup
 
-- `cmd/` - Contains all Cobra based commands.
-- `pkg/`
-  - `server/` - Server-side logic including WebSocket handling.
-  - `client/` - Client-side interactions and WebSocket management.
-  - `chat/` - Core chat functionalities and utilities.
-- `test/` - Contains unit tests for server and client functionalities.
+- Set up the Go environment and project structure.
+- Initialize Git repository and branch strategy.
+- Set up CobraCLI with a basic command (`codechat --init`).
 
-## Testing
+#### Milestone 2: Server and WebSocket Implementation
 
-To run tests, execute the following command in the project's root directory:
+- Develop the WebSocket server using Gorilla WebSocket.
+- Implement basic connect, disconnect, and message handling capabilities.
+- Set up JSON for message formatting (e.g., sending, receiving messages).
 
-```bash
-go test ./...
-```
+#### Milestone 3: CLI Client Development
 
-This will run all the unit tests defined in the `test/` directory.
+- Implement WebSocket client logic in the CLI application.
+- Enable sending and receiving messages through the CLI.
+- Integrate Cobra commands for different operations (e.g., send message, view messages).
 
-## Contributing
+#### Milestone 4: Testing and Debugging
 
-Contributions to the CLI Chat Application are welcome! To contribute:
+- Write unit tests for both server and client components.
+- Conduct integration testing to ensure the system works as a whole.
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/AmazingFeature`).
-3. Make your changes and commit them (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request.
+#### Milestone 5: Configuration and Logging
 
-Please ensure your code adheres to the existing style and has sufficient test coverage.
+- Configure Viper to manage environment variables and configuration settings.
+- Set up Zap for structured logging on both server and client sides.
+
+#### Milestone 6: Deployment and CI/CD Setup
+
+- Prepare Docker containers for deploying the server.
+- Set up GitHub Actions for automated testing and deployment.
+
+#### Milestone 7: Documentation and Cleanup
+
+- Document the setup process, usage, and configuration options.
+- Clean up the code, remove unnecessary parts, and ensure coding standards.
+
+#### Mileilestone 8: Launch and Feedback Collection
+
+- Launch the application for users.
+- Collect feedback and make necessary adjustments based on user input.
