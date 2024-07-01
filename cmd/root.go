@@ -7,35 +7,33 @@ import (
 	"os"
 )
 
+var start string
 
-var rootCmd = &cobra.Command{
-	Use:   "cli",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+// startCmd is the root command here which will begin the CLI
+var startCmd = &cobra.Command{
+	Use:   "CodeChat is a CLI Chat Application for Developers",
+	Short: "This is short description for start command of CodeChat",
+	Long:  "This is Long description for start command of CodeChat",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("start flag is : ", start)
+	},
+	TraverseChildren: true,
 }
 
+// Execute adds all child commands to the root command and sets flags appropriately.
+// This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+	err := startCmd.Execute()
+	if err != nil {
+		os.Exit(2)
 	}
 }
 
 func init() {
-	cobra.OnInitialize(initConfig)
-}
-
-func initConfig() {
-	viper.SetConfigName("config")
-	viper.AddConfigPath(".")
-	viper.SetConfigType("yaml")
-	err := viper.ReadInConfig()
+	startCmd.Flags().StringVarP(&start, "start", "s", "default_start_command_value", "Start the Chat Application")
+	err := viper.BindPFlag("start", startCmd.Flags().Lookup("start"))
 	if err != nil {
-		fmt.Println("No configuration file loaded - using defaults.")
+		fmt.Println("Error in retrieving flag in startCmd")
+		return
 	}
 }
