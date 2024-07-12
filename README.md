@@ -1,3 +1,5 @@
+# README.md
+
 ```bash
 CodeChat/
 │
@@ -32,10 +34,12 @@ CodeChat/
 1. **`cmd/`**: Contains the command line interface setup using CobraCLI. Here, you define your `root.go` that sets up the CLI environment and `chat.go` where the chat command and its flags are defined.
 
 2. **`internal/`**:
+
    - **`server/`**: Holds the server logic, including managing WebSocket connections (`server.go`) and handling connected clients (`client.go`).
    - **`client/`**: Manages the chat client functionality, establishing WebSocket connections and rendering the user interface in the terminal (`ui.go`).
 
 3. **`pkg/`**:
+
    - **`websocket/`**: Utilities to handle WebSocket operations, such as message encoding and decoding.
    - **`common/`**: Defines common data structures used across the application, like message formats.
 
