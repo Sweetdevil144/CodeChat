@@ -1,48 +1,80 @@
-# README.md
+# CodeChat: Real-time Chat Application
 
-```bash
-CodeChat/
-│
-├── cmd/
-│   ├── root.go          # Root command where CobraCLI is initialized
-│   └── chat.go          # Sub-command to handle chat functionalities
-│
-├── internal/
-│   ├── server/
-│   │   ├── server.go    # Setup and handle WebSocket server
-│   │   └── client.go    # Manage client connections and messages
-│   │
-│   └── client/
-│       ├── client.go    # WebSocket client handling
-│       └── ui.go        # User interface for the chat in the terminal
-│
-├── pkg/
-│   ├── websocket/
-│   │   └── connection.go  # WebSocket connection utilities (encode/decode messages, etc.)
-│   │
-│   └── common/
-│       └── models.go      # Data models, like messages or commands
-│
-├── main.go              # Main application entry point, initializes Cobra
-│
-└── go.mod               # Go module definitions
-└── go.sum               # Go module checksums
+Welcome to CodeChat, a real-time chat application designed to facilitate seamless communication through a terminal-based interface. Built with a focus on simplicity and efficiency, CodeChat leverages WebSockets for real-time messaging and is structured to provide a clear separation of concerns, making it both scalable and easy to maintain.
+
+## Upcoming Integrations (Proposed)
+
+- [ ] Tview, for a better Terminal aspect.
+- [ ] Web interface (Optional)
+
+## Current Features
+
+- **Real-time Communication**: Instantly send and receive messages with minimal latency.
+- **CLI-based Interface**: Access and interact with the chat directly from your terminal.
+- **Scalable Architecture**: Designed with a modular architecture that separates the client, server, and common utilities.
+
+## Getting Started
+
+To get started with CodeChat, clone this repository to your local machine and follow the setup instructions below.
+
+### Prerequisites
+
+- Golang
+- WebSocket support
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/<yourusername>/CodeChat.git
+   ```
+
+2. Navigate to the cloned directory:
+
+   ```sh
+   cd CodeChat
+   ```
+
+3. Build the application:
+
+   ```sh
+   ./build.sh
+   ```
+
+   If you encounter a permission denied error, run `chmod +x build.sh` to make the script executable.
+
+### Running CodeChat
+
+To start the ChatApp server, run:
+
+```sh
+./CodeChat server
 ```
 
-### Main Components
+To connect as a client from another terminal, run:
 
-1. **`cmd/`**: Contains the command line interface setup using CobraCLI. Here, you define your `root.go` that sets up the CLI environment and `chat.go` where the chat command and its flags are defined.
+```sh
+./CodeChat client
+```
 
-2. **`internal/`**:
+## Project Structure
 
-   - **`server/`**: Holds the server logic, including managing WebSocket connections (`server.go`) and handling connected clients (`client.go`).
-   - **`client/`**: Manages the chat client functionality, establishing WebSocket connections and rendering the user interface in the terminal (`ui.go`).
+CodeChat is organized into several key components for clarity and ease of development:
 
-3. **`pkg/`**:
+- **`cmd/`**: Contains the CLI setup using CobraCLI, including `root.go` for CLI environment setup and `chat.go` for chat command definitions.
+- **`internal/`**:
+  - **`server/`**: Contains server logic, WebSocket connection management (`server.go`), and client handling (`client.go`).
+  - **`client/`**: Manages chat client functionality, WebSocket connections, and terminal UI rendering (`ui.go`).
+- **`pkg/`**:
+  - **`websocket/`**: Provides utilities for WebSocket operations, like message encoding/decoding.
+  - **`common/`**: Defines common data structures, such as message formats.
+- **`main.go`**: The application's entry point, initializing and running Cobra commands.
 
-   - **`websocket/`**: Utilities to handle WebSocket operations, such as message encoding and decoding.
-   - **`common/`**: Defines common data structures used across the application, like message formats.
+## Contributing
 
-4. **`main.go`**: The entry point of your application, responsible for initializing and running the Cobra commands.
+Contributions to CodeChat are welcome!
 
-This structure keeps the server and client code separate, allowing you to manage each part of the application more easily. Additionally, using packages like `websocket` and `common` helps in maintaining a clean codebase by segregating functionality and reusable components.
+## License
+
+CodeChat is open-sourced under the MIT License. See the LICENSE file for more details.
