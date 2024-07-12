@@ -1,19 +1,18 @@
-I apologize for the confusion. Here's a Development README designed to guide you from the very beginning of building your CLI chat application in Go. This document will help you set up your project, outline each step, and guide you through the development process.
-
 # Development README for CLI Chat Application
 
 Welcome to the development guide for building a CLI Chat Application in Go. This guide will walk you through the steps to set up your development environment, structure your project, and develop the application step-by-step.
 
 ## Table of Contents
 
-1. [Setting Up Your Development Environment](#setting-up-your-development-environment)
-2. [Initializing Your Project](#initializing-your-project)
-3. [Project Structure](#project-structure)
-4. [Building the Server](#building-the-server)
-5. [Building the Client](#building-the-client)
-6. [Implementing Core Functionalities](#implementing-core-functionalities)
-7. [Testing and Debugging](#testing-and-debugging)
-8. [Documentation and Deployment](#documentation-and-deployment)
+- [Development README for CLI Chat Application](#development-readme-for-cli-chat-application)
+  - [Table of Contents](#table-of-contents)
+  - [Setting Up Your Development Environment](#setting-up-your-development-environment)
+  - [Initializing Your Project](#initializing-your-project)
+  - [Building the Server](#building-the-server)
+  - [Building the Client](#building-the-client)
+  - [Implementing Core Functionalities](#implementing-core-functionalities)
+  - [Testing and Debugging](#testing-and-debugging)
+  - [Documentation and Deployment](#documentation-and-deployment)
 
 ## Setting Up Your Development Environment
 
@@ -24,12 +23,12 @@ Before you begin, ensure you have the following installed:
 
 1. **Create a new directory for your project:**
    ```bash
-   mkdir my-chat-app
-   cd my-chat-app
+   mkdir CodeChat
+   cd CodeChat
    
 2. **Initialize a new Go module:**
    ```bash
-   go mod init my-chat-app
+   go mod init CodeChat
    ```
 
 3. **Install Cobra for CLI command handling:**
@@ -39,30 +38,9 @@ Before you begin, ensure you have the following installed:
 
    After installation, initialize Cobra:
    ```bash
-   cobra init --pkg-name my-chat-app
+   cobra init --pkg-name CodeChat
    ```
 
-## Project Structure
-
-Organize your project with the following directory structure:
-
-```
-my-chat-app/
-|-- cmd/
-|   |-- root.go
-|   |-- start.go
-|-- pkg/
-|   |-- server/
-|   |   |-- server.go
-|   |-- client/
-|   |   |-- client.go
-|   |-- chat/
-|   |   |-- chat.go
-|-- test/
-|-- go.mod
-|-- go.sum
-|-- README.md
-```
 
 ## Building the Server
 

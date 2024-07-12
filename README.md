@@ -1,7 +1,7 @@
 Building a terminal chat application using WebSockets and CobraCLI can be a fun and educational project. Below, I'll outline a basic file structure for such an application, assuming you're using Go as the programming language:
 
 ```bash
-chat-app/
+CodeChat/
 │
 ├── cmd/
 │   ├── root.go          # Root command where CobraCLI is initialized

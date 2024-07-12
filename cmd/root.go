@@ -5,8 +5,8 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-    Use:   "chat-app",
-    Short: "Chat App is a terminal-based chat application using WebSockets",
+    Use:   "CodeChat",
+    Short: "CodeChat App is a terminal-based chat application using WebSockets",
 }
 
 func Execute() error {
