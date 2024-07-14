@@ -58,5 +58,5 @@ func ShowTreeView() {
 		panic(err)
 	}
 
-	// Copyrights : github.com/rivo/tview
+	// Copyrights : This code has been extracted from github.com/rivo/tview
 }
