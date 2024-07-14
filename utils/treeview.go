@@ -57,4 +57,6 @@ func ShowTreeView() {
 	if err := tview.NewApplication().SetRoot(tree, true).EnableMouse(true).Run(); err != nil {
 		panic(err)
 	}
+
+	// Copyrights : github.com/rivo/tview
 }
